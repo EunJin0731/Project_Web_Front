@@ -1,0 +1,40 @@
+.app-header{
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  .menubar{
+    list-style-type: none;
+
+    li{
+      float: left;
+        .menuitem{
+          color: black;
+          text-decoration: none;
+          padding: 20px;
+
+          &:hover{
+            color: darkslategray;
+            border-bottom: 1px solid cornflowerblue;
+           }
+        }
+    }
+  }
+}
+
+.app-body{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 57px;
+  overflow: auto;
+}
+
+.app-footer{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
