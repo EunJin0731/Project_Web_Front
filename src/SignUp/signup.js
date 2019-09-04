@@ -18,14 +18,11 @@ class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: '',
             account: '',
             password: '',
-            name: '',
-            phone: '',
-            mobile: '',
-            zipcode: '',
-            address: '',
-            email: '',
+            gender: '',
+            age: '',
             goToMain: false
         };
 
@@ -42,13 +39,19 @@ class Signup extends Component {
         return (
             <div>
                 <div>
-                    프로필 사진 <br/>
+                    프로필 사진 <input type="file"/><br/>
                     이름 <input type="text"/><br/>
                     아이디 <input type="text"/><br/>
-                    비밀번호 <input type="text"/><br/>
-                    비밀번호 확인 <input type="text"/><br/>
-                    성별 <input type="text"/><br/>
-                    나이 <input type="text"/><br/>
+                    비밀번호 <input type="password"/><br/>
+                    비밀번호 확인 <input type="password"/><br/>
+                    성별 <input type="radio" name="gender"/>여 <input type="radio" name="gender"/>남<br/>
+                    나이 <select name='age'>
+                    <option value='10' selected>10대</option>
+                    <option value='20'>20대</option>
+                    <option value='30'>30대</option>
+                    <option value='40'>40대</option>
+                    <option value='50'>50대</option>
+                </select><br/>
                 </div>
                 <button onClick={this.signUp}>회원가입</button><button onClick={this.cancel}>취소</button>
             </div>
@@ -73,31 +76,13 @@ class Signup extends Component {
         });
     }
 
-    updatePhone = event => {
-        this.setState({
-            phone : event.target.value
-        });
-    }
-
-    updateMobile = event => {
-        this.setState({
-            mobile : event.target.value
-        });
-    }
-
-    updateZipcode = event => {
-        this.setState({
-            zipcode : event.target.value
-        });
-    }
-
-    updateAddress = event => {
+    updateAge = event => {
         this.setState({
             address : event.target.value
         });
     }
 
-    updateEmail = event => {
+    updateGender = event => {
         this.setState({
             email : event.target.value
         });
@@ -125,10 +110,6 @@ class Signup extends Component {
 
     cancel = () => {
         if(window.confirm('취소하시겠습니까?') === false) return;
-    }
-
-    openZipSearch = () =>{
-
     }
 }
 

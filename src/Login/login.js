@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "./login.scss";
 import {inject, observer} from "mobx-react";
+import {Link} from "react-router-dom";
 
 @inject('stores')
 @observer
@@ -20,7 +21,7 @@ class Login extends Component {
             <div>
                 아이디 <input className="id" placeholder="id" onChange={this.updateAccount}/><br/>
                 비밀번호 <input className="password" placeholder="password" type="password" onChange={this.updatePassword}/><br/>
-                <button onClick={this.login}>확인</button> <button onClick={this.signUp}>회원가입</button>
+                <button onClick={this.login}>확인</button> <a href="/signup">회원가입</a>
             </div>
         );
     }
@@ -47,10 +48,6 @@ class Login extends Component {
             });
         }
     };
-
-    lost = () => {
-        if(window.confirm('아이디 / 패스워드 분실신고 진행하시겠습니까?') == false) return;
-    }
 }
 
 export default Login;
